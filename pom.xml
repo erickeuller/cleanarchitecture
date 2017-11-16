@@ -13,6 +13,7 @@
         <module>persistencesql</module>
         <module>deploy</module>
         <module>rest</module>
+        <module>persistencenosql</module>
     </modules>
 
 

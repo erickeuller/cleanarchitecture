@@ -8,15 +8,29 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    
+    <packaging>ear</packaging>
+
     <dependencies>
         <dependency>
             <artifactId>core</artifactId>
             <groupId>cleanarchitecture</groupId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>cleanarchitecture</groupId>
             <artifactId>persistence-sql</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cleanarchitecture</groupId>
+            <artifactId>rest</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
         </dependency>
     </dependencies>
 
@@ -63,7 +77,7 @@
                                         -Djava.compiler=NONE
                                     </cargo.start.jvmargs>
                                     <cargo.datasource.datasource.jf>
-                                        cargo.datasource.jndi=dacsdb|
+                                        cargo.datasource.jndi=cleanarc|
                                         cargo.datasource.url=jdbc:mysql://localhost:3306/cleanarc|
                                         cargo.datasource.driver=com.mysql.jdbc.Driver|
                                         cargo.datasource.username=root|

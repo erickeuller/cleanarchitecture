@@ -1,19 +1,20 @@
 package rest.gateway;
 
-import core.entities.User;
-import core.usecases.CreateUser;
 import rest.vo.UserVO;
-import sql.daos.impl.UserEntityDAOImpl;
-import sql.gateway.UserDAOGateway;
 
-import static rest.adapters.UserVoAdapter.from;
-import static rest.adapters.UserVoAdapter.to;
+import javax.ejb.Local;
+import java.util.Collection;
 
-public class UserRestGateway {
+@Local
+public interface UserRestGateway {
 
-    private CreateUser createUser = new CreateUser(new UserDAOGateway());
+    UserVO create(UserVO userVO);
 
-    public UserVO create(UserVO userVO) {
-        return from(createUser.create(to(userVO)));
-    }
+    UserVO getUserByCode(String code);
+
+    Collection<UserVO> findAll();
+
+    void delete(UserVO vo);
+
+    UserVO update(UserVO vo);
 }

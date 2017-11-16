@@ -1,15 +1,18 @@
-package sql.daos;
+package sql.dao;
 
 import sql.entities.UserEntity;
 
-import javax.ejb.Stateless;
+import javax.ejb.Local;
+import java.util.Collection;
 
-@Stateless
+@Local
 public interface UserEntityDAO {
 
     UserEntity create(UserEntity userEntity);
 
     UserEntity findByCode(String userEntity);
+
+    Collection<UserEntity> findAll();
 
     UserEntity update(UserEntity user);
 
