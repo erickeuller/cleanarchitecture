@@ -78,10 +78,10 @@
                                     </cargo.start.jvmargs>
                                     <cargo.datasource.datasource.jf>
                                         cargo.datasource.jndi=cleanarc|
-                                        cargo.datasource.url=jdbc:mysql://localhost:3306/cleanarc|
+                                        cargo.datasource.url=jdbc:mysql://10.80.81.159:3310/cleanarc|
                                         cargo.datasource.driver=com.mysql.jdbc.Driver|
                                         cargo.datasource.username=root|
-                                        cargo.datasource.password=
+                                        cargo.datasource.password=root
                                     </cargo.datasource.datasource.jf>
                                 </properties>
                             </configuration>

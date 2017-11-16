@@ -24,7 +24,6 @@ public class UserRest {
 
     @GET
     @Path("/")
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUsers() {
         return Response.ok().entity(gateway.findAll()).build();
@@ -32,17 +31,15 @@ public class UserRest {
 
     @GET
     @Path("/{code}")
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUser(String code) {
+    public Response getUser(@PathParam("code") String code) {
         return Response.ok(gateway.getUserByCode(code)).build();
     }
 
     @DELETE
-    @Path("/")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response delete(UserVO vo) {
+    @Path("/{code}")
+    public Response delete(@PathParam("code") String code) {
+        UserVO vo = gateway.getUserByCode(code);
         gateway.delete(vo);
         return Response.ok().build();
     }

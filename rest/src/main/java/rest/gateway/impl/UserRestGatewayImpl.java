@@ -1,5 +1,6 @@
 package rest.gateway.impl;
 
+import core.boundaries.UserDAO;
 import core.usecases.CreateUser;
 import core.usecases.DeleteUser;
 import core.usecases.GetUser;
@@ -20,8 +21,10 @@ import static rest.adapters.UserVoAdapter.to;
 @Stateless
 public class UserRestGatewayImpl implements UserRestGateway {
 
-    @EJB
-    private UserDAOGateway dao;
+//    @EJB
+//    private UserDAOGateway dao;
+
+    private UserDAO dao = new nosql.gateway.UserDAOGateway();
 
     @Override
     public UserVO create(UserVO userVO) {
